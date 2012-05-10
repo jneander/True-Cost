@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- True Cost : results.xml -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/results_layout_outer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        style="@style/PaddedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/results_message_header"
+            style="@style/TextViewParagraph"
+            android:layout_gravity="center"
+            android:layout_marginBottom="0dp"
+            android:text="@string/results_message_header" />
+
+        <TextView
+            android:id="@+id/results_message_truecost"
+            style="@style/TrueCostValue" />
+
+        <TextView
+            android:id="@+id/results_message"
+            style="@style/TextViewParagraph" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- True Cost : strings.xml -->
+
 <resources>
 
-    <string name="hello">Hello World, Query!</string>
+    <!-- Application Strings -->
     <string name="app_name">True Cost</string>
+    <string name="app_prefs">trueCostPrefs</string>
+
+    <!-- Menu -->
+    <string name="menu_about">About</string>
+    <string name="menu_account">Edit Account</string>
+
+    <!-- Storage Strings -->
+    <string name="data_account_balance">accountBalance</string>
+    <string name="data_account_payment">accountPayment</string>
+    <string name="data_account_apr">accountAPR</string>
+
+    <!-- Generic Strings -->
+    <string name="ui_hint_currency">####.##</string>
+
+    <!-- Intro -->
+    <string name="intro_welcome">Thank you for using True Cost!</string>
+    <string name="intro_message">The goal of this application is to help people with credit debt realize the real value of their money. By showing how interest increases or decreases with purchases and payments, it becomes quite clear that every dollar is worth more than face value to a person with credit debt.\n\nThis application does not use any sensitive or personally-identifying information. You\'ll see why once you get started.</string>
+    <string name="intro_button_begin">Let\'s begin!</string>
+
+    <!-- Query -->
+    <string name="query_title">Query</string>
+    <string name="query_prompt_howmuch">How much is the item you would like to buy (including taxes)?</string>
+    <string name="query_prompt_method">How will you be paying?</string>
+    <string name="query_button_results">How much will this really cost?</string>
+
+    <string-array name="payment_method">
+        <item>Cash</item>
+        <item>Credit</item>
+    </string-array>
+
+    <!-- Account -->
+    <string name="account_title">Account</string>
+    <string name="account_header">Your Virtual Credit Account</string>
+    <string name="account_label_balance">Balance</string>
+    <string name="account_label_payment">Payment</string>
+    <string name="account_label_apr">APR</string>
+    <string name="account_symbol_apr">%</string>
+    <string name="account_label_save">Save Changes</string>
+
+    <!-- Results -->
+    <string name="results_title">Results!</string>
+    <string name="results_message_header">This will actually cost you:</string>
+    <string name="results_message_body_interest">If you make this purchase, you will be paying an additional &lt;font color=\'red\'>#&lt;/font> in interest.</string>
+    <string name="results_message_body_cash">You could turn this into savings if you send the # as an extra payment to your credit card this month.</string>
+    <string name="results_message_body_credit">If you can find another way to make this purchase without increasing your credit balance, you can save yourself this amount in interest. Even better, if this purchase is not for something you need, consider waiting until you know you can afford it.</string>
+    <string name="results_message_body_duration">As a result, you could pay off your credit card &lt;u># MONTH&lt;/u> sooner.</string>
+    <string name="results_message_body_highinterest_low">That\'s almost as much as the purchase itself! You would effectively be doubling what you pay for this.</string>
+    <string name="results_message_body_highinterest_equal">That\'s as much as the purchase itself! You would effectively be doubling what you pay for this.</string>
+    <string name="results_message_body_highinterest_mid">That\'s more money in interest than the purchase itself! You would be paying more than double the cost for this.</string>
+    <string name="results_message_body_highinterest_high">That’s almost &lt;u># times&lt;/u> what this purchase should cost! Ask yourself, “Do I really want to spend that much for this?”</string>
+
+    <!-- About -->
+    <string name="about_title">About True Cost</string>
+    <string name="about_main_message">I created this app to help both myself and others who are struggling with credit debt. I realize the importance of being smarter with money in the face of high credit balances and high interest rates. My hope is that I might help others realize exactly how much each dollar they have is worth. If you\'re in debt, that dollar can be worth much, much more.</string>
+    <string name="about_whyfree_header">\"Why is this app free?\"</string>
+    <string name="about_whyfree_message">I want to help people get out of debt. I could charge for that help, or I could simply offer it freely out of the goodness of my heart. If you feel obliged to give back, I do accept donations. They will go a long way to helping with my own debt (I have student loans, too!).</string>
+    <string name="about_howhelp_header">\"How can I help others?\"</string>
+    <string name="about_howhelp_message">Be there for people when they might not make the best financial decisions on their own. Are they buying a cup of coffee with a nearly maxed-out credit card? Are they considering a new car when they have other transportation available? Give them a quick math lesson and show them where each dollar is going. They might just thank you for that.</string>
 
 </resources>

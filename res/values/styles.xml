@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PaddedLayout">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/view_padding_medium</item>
+    </style>
+
+    <style name="ScrollLayout">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="TextViewHeader" parent="@android:style/TextAppearance.Large">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">@dimen/view_padding_small</item>
+        <item name="android:textSize">@dimen/text_header</item>
+    </style>
+
+    <style name="TextViewParagraph" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/view_padding_small</item>
+        <item name="android:textSize">@dimen/text_paragraph</item>
+        <item name="android:textColor">@color/text_paragraph</item>
+    </style>
+
+    <style name="TextViewPrompt" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/view_padding_small</item>
+        <item name="android:textSize">@dimen/text_prompt</item>
+    </style>
+
+    <style name="FormLayout">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/view_padding_small</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="FormField">
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginBottom">@dimen/view_padding_small</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="FormField.Account">
+        <item name="android:layout_width">0px</item>
+        <item name="android:layout_marginBottom">0px</item>
+    </style>
+
+    <style name="FieldLabel" parent="@android:style/TextAppearance.Large">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_field_label</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0px</item>
+        <item name="android:textColor">@color/text_paragraph</item>
+    </style>
+
+    <style name="FieldLabel.Left">
+        <item name="android:paddingRight">@dimen/view_padding_medium</item>
+    </style>
+
+    <style name="FieldLabel.Right">
+        <item name="android:paddingLeft">@dimen/view_padding_medium</item>
+    </style>
+
+    <style name="FieldCurrency">
+        <item name="android:hint">@string/ui_hint_currency</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0px</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="WeightedLayout">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:weightSum">@integer/layout_weight_medium</item>
+    </style>
+
+    <style name="WeightedView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0px</item>
+        <item name="android:layout_weight">@integer/view_weight_medium</item>
+    </style>
+
+    <style name="WeightedLayout.Wide">
+        <item name="android:weightSum">@integer/layout_weight_wide</item>
+    </style>
+
+    <style name="WeightedView.Wide">
+        <item name="android:layout_weight">@integer/view_weight_wide</item>
+    </style>
+
+    <style name="TrueCostValue" parent="@android:style/TextAppearance.Large">
+        <item name="android:textColor">@color/text_truecost</item>
+        <item name="android:textSize">@dimen/text_truecost</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">@dimen/view_padding_small</item>
+    </style>
+
+</resources>

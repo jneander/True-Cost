@@ -10,13 +10,30 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name=".Query"
-            android:label="@string/app_name" >
+            android:name=".main.Query"
+            android:label="@string/app_name"
+            android:theme="@style/ScrollLayout" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.Account"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/account_title"
+            android:theme="@style/ScrollLayout" >
+        </activity>
+        <activity
+            android:name=".main.Results"
+            android:label="@string/results_title"
+            android:theme="@style/ScrollLayout" >
+        </activity>
+        <activity
+            android:name=".main.About"
+            android:label="@string/about_title"
+            android:theme="@style/ScrollLayout" >
         </activity>
     </application>
 

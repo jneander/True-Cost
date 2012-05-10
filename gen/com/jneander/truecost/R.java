@@ -8,16 +8,175 @@
 package com.jneander.truecost;
 
 public final class R {
+    public static final class anim {
+        public static final int view_transition_in_left=0x7f040000;
+        public static final int view_transition_in_right=0x7f040001;
+        public static final int view_transition_out_left=0x7f040002;
+        public static final int view_transition_out_right=0x7f040003;
+    }
+    public static final class array {
+        public static final int payment_method=0x7f090000;
+    }
     public static final class attr {
+    }
+    public static final class color {
+        public static final int text_paragraph=0x7f050000;
+        public static final int text_truecost=0x7f050001;
+    }
+    public static final class dimen {
+        /**  Query Dimensions 
+         */
+        public static final int query_margins=0x7f060008;
+        /**  Standard Dimensions 
+         */
+        public static final int std_outer_margin=0x7f060009;
+        public static final int std_outer_padding=0x7f06000a;
+        public static final int text_button=0x7f06000c;
+        public static final int text_field_content=0x7f06000b;
+        public static final int text_field_label=0x7f060006;
+        /**  Fonts 
+ Fonts 
+ Fonts 
+ Fonts 
+         */
+        public static final int text_header=0x7f060003;
+        public static final int text_paragraph=0x7f060004;
+        public static final int text_prompt=0x7f060005;
+        public static final int text_truecost=0x7f060007;
+        public static final int view_padding_large=0x7f060002;
+        public static final int view_padding_medium=0x7f060001;
+        /**  View Padding 
+ View Padding 
+ View Padding 
+ View Padding 
+         */
+        public static final int view_padding_small=0x7f060000;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
+    public static final class id {
+        public static final int about_layout_inner=0x7f0c0001;
+        public static final int account_apr_field=0x7f0c0009;
+        public static final int account_apr_label=0x7f0c0008;
+        public static final int account_apr_symbol=0x7f0c000a;
+        public static final int account_balance_field=0x7f0c0005;
+        public static final int account_balance_label=0x7f0c0004;
+        public static final int account_layout_outer=0x7f0c0000;
+        public static final int account_payment_field=0x7f0c0007;
+        public static final int account_payment_label=0x7f0c0006;
+        public static final int account_save_btn=0x7f0c000b;
+        public static final int account_viewFlipper=0x7f0c0002;
+        public static final int intro_button_begin=0x7f0c000e;
+        public static final int intro_layout=0x7f0c000c;
+        public static final int intro_message=0x7f0c000d;
+        public static final int menu_about=0x7f0c0018;
+        public static final int menu_account=0x7f0c0019;
+        public static final int query_button_results=0x7f0c0013;
+        public static final int query_layout=0x7f0c0010;
+        public static final int query_layout_inner=0x7f0c0003;
+        public static final int query_layout_outer=0x7f0c000f;
+        public static final int query_price_edittext=0x7f0c0011;
+        public static final int query_spinner_paymentMethod=0x7f0c0012;
+        public static final int results_layout_outer=0x7f0c0014;
+        public static final int results_message=0x7f0c0017;
+        public static final int results_message_header=0x7f0c0015;
+        public static final int results_message_truecost=0x7f0c0016;
+    }
+    public static final class integer {
+        public static final int layout_weight_medium=0x7f070003;
+        public static final int layout_weight_wide=0x7f070001;
+        public static final int view_weight_medium=0x7f070002;
+        /**  Weights 
+ Weights 
+         */
+        public static final int view_weight_wide=0x7f070000;
+    }
     public static final class layout {
-        public static final int main=0x7f030000;
+        public static final int about=0x7f030000;
+        public static final int account=0x7f030001;
+        public static final int intro=0x7f030002;
+        public static final int query=0x7f030003;
+        public static final int results=0x7f030004;
+    }
+    public static final class menu {
+        public static final int menu=0x7f0b0000;
     }
     public static final class string {
-        public static final int app_name=0x7f040001;
-        public static final int hello=0x7f040000;
+        public static final int about_howhelp_header=0x7f080024;
+        public static final int about_howhelp_message=0x7f080025;
+        public static final int about_main_message=0x7f080021;
+        /**  About 
+         */
+        public static final int about_title=0x7f080020;
+        public static final int about_whyfree_header=0x7f080022;
+        public static final int about_whyfree_message=0x7f080023;
+        public static final int account_header=0x7f080010;
+        public static final int account_label_apr=0x7f080013;
+        public static final int account_label_balance=0x7f080011;
+        public static final int account_label_payment=0x7f080012;
+        public static final int account_label_save=0x7f080015;
+        public static final int account_symbol_apr=0x7f080014;
+        /**  Account 
+         */
+        public static final int account_title=0x7f08000f;
+        /**  Application Strings 
+         */
+        public static final int app_name=0x7f080000;
+        public static final int app_prefs=0x7f080001;
+        public static final int data_account_apr=0x7f080006;
+        /**  Storage Strings 
+         */
+        public static final int data_account_balance=0x7f080004;
+        public static final int data_account_payment=0x7f080005;
+        public static final int intro_button_begin=0x7f08000a;
+        public static final int intro_message=0x7f080009;
+        /**  Intro 
+         */
+        public static final int intro_welcome=0x7f080008;
+        /**  Menu 
+         */
+        public static final int menu_about=0x7f080002;
+        public static final int menu_account=0x7f080003;
+        public static final int query_button_results=0x7f08000e;
+        public static final int query_prompt_howmuch=0x7f08000c;
+        public static final int query_prompt_method=0x7f08000d;
+        /**  Query 
+         */
+        public static final int query_title=0x7f08000b;
+        public static final int results_message_body_cash=0x7f080019;
+        public static final int results_message_body_credit=0x7f08001a;
+        public static final int results_message_body_duration=0x7f08001b;
+        public static final int results_message_body_highinterest_equal=0x7f08001d;
+        public static final int results_message_body_highinterest_high=0x7f08001f;
+        public static final int results_message_body_highinterest_low=0x7f08001c;
+        public static final int results_message_body_highinterest_mid=0x7f08001e;
+        public static final int results_message_body_interest=0x7f080018;
+        public static final int results_message_header=0x7f080017;
+        /**  Results 
+         */
+        public static final int results_title=0x7f080016;
+        /**  Generic Strings 
+         */
+        public static final int ui_hint_currency=0x7f080007;
+    }
+    public static final class style {
+        public static final int FieldCurrency=0x7f0a000b;
+        public static final int FieldLabel=0x7f0a0008;
+        public static final int FieldLabel_Left=0x7f0a0009;
+        public static final int FieldLabel_Right=0x7f0a000a;
+        public static final int FormField=0x7f0a0006;
+        public static final int FormField_Account=0x7f0a0007;
+        public static final int FormLayout=0x7f0a0005;
+        public static final int PaddedLayout=0x7f0a0000;
+        public static final int ScrollLayout=0x7f0a0001;
+        public static final int TextViewHeader=0x7f0a0002;
+        public static final int TextViewParagraph=0x7f0a0003;
+        public static final int TextViewPrompt=0x7f0a0004;
+        public static final int TrueCostValue=0x7f0a0010;
+        public static final int WeightedLayout=0x7f0a000c;
+        public static final int WeightedLayout_Wide=0x7f0a000e;
+        public static final int WeightedView=0x7f0a000d;
+        public static final int WeightedView_Wide=0x7f0a000f;
     }
 }

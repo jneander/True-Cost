@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- True Cost : query.xml -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/query_layout_outer" >
+
+    <LinearLayout
+        android:id="@+id/query_layout"
+        style="@style/PaddedLayout" >
+
+        <TextView
+            style="@style/TextViewPrompt"
+            android:text="@string/query_prompt_howmuch" />
+
+        <EditText
+            android:id="@+id/query_price_edittext"
+            style="@style/FormField" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            style="@style/TextViewPrompt"
+            android:text="@string/query_prompt_method" />
+
+        <Spinner
+            android:id="@+id/query_spinner_paymentMethod"
+            style="@style/FormField"
+            android:entries="@array/payment_method" />
+
+        <LinearLayout
+            style="@style/WeightedLayout.Wide"
+            android:paddingTop="@dimen/view_padding_small" >
+
+            <Button
+                android:id="@+id/query_button_results"
+                style="@style/WeightedView.Wide"
+                android:text="@string/query_button_results" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- True Cost : about.xml -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/account_layout_outer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/about_layout_inner"
+        style="@style/PaddedLayout" >
+
+        <TextView
+            style="@style/TextViewParagraph"
+            android:text="@string/about_main_message" />
+
+        <TextView
+            style="@style/TextViewHeader"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/about_whyfree_header"
+            android:textStyle="italic" />
+
+        <TextView
+            style="@style/TextViewParagraph"
+            android:text="@string/about_whyfree_message" />
+
+        <TextView
+            style="@style/TextViewHeader"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/about_howhelp_header"
+            android:textStyle="italic" />
+
+        <TextView
+            style="@style/TextViewParagraph"
+            android:text="@string/about_howhelp_message" />
+    </LinearLayout>
+
+</ScrollView>

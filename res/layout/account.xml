@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- True Cost : query.xml -->
+
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/account_viewFlipper"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <ScrollView>
+
+        <LinearLayout
+            android:id="@+id/query_layout_inner"
+            style="@style/PaddedLayout" >
+
+            <TextView
+                style="@style/TextViewHeader"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/view_padding_medium"
+                android:text="@string/account_header" />
+
+            <LinearLayout style="@style/FormLayout" >
+
+                <TextView
+                    android:id="@+id/account_balance_label"
+                    style="@style/FieldLabel.Left"
+                    android:layout_weight="2"
+                    android:text="@string/account_label_balance" />
+
+                <EditText
+                    android:id="@+id/account_balance_field"
+                    style="@style/FormField.Account"
+                    android:layout_weight="4" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/FormLayout" >
+
+                <TextView
+                    android:id="@+id/account_payment_label"
+                    style="@style/FieldLabel.Left"
+                    android:layout_weight="2"
+                    android:text="@string/account_label_payment" />
+
+                <EditText
+                    android:id="@+id/account_payment_field"
+                    style="@style/FormField.Account"
+                    android:layout_weight="4" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/FormLayout" >
+
+                <TextView
+                    android:id="@+id/account_apr_label"
+                    style="@style/FieldLabel.Left"
+                    android:layout_weight="2"
+                    android:text="@string/account_label_apr" />
+
+                <EditText
+                    android:id="@+id/account_apr_field"
+                    style="@style/FormField.Account"
+                    android:layout_weight="3"
+                    android:hint="20.49" />
+
+                <TextView
+                    android:id="@+id/account_apr_symbol"
+                    style="@style/FieldLabel.Right"
+                    android:layout_weight="1"
+                    android:text="@string/account_symbol_apr" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/WeightedLayout" >
+
+                <Button
+                    android:id="@+id/account_save_btn"
+                    style="@style/WeightedView"
+                    android:layout_marginTop="@dimen/view_padding_small"
+                    android:text="@string/account_label_save" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView>
+
+        <include
+            android:id="@+id/intro_layout"
+            layout="@layout/intro" />
+    </ScrollView>
+
+</ViewFlipper>

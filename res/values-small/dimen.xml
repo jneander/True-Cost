@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- True Cost Library - values-small/dimen.xml -->
+
+<resources>
+
+    <!-- View Padding -->
+    <dimen name="view_padding_small">5dp</dimen>
+    <dimen name="view_padding_medium">10dp</dimen>
+    <dimen name="view_padding_large">15dp</dimen>
+    
+    <!-- Fonts -->
+    <dimen name="text_header">20dp</dimen>
+    <dimen name="text_paragraph">18dp</dimen>
+    <dimen name="text_prompt">15dp</dimen>
+    <dimen name="text_field_label">20dp</dimen>
+    <dimen name="text_truecost">30dp</dimen>
+
+</resources>

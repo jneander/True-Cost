@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- True Cost Library - values/other.xml (default) -->
+
+<resources>
+
+    <!-- Weights -->
+    <integer name="view_weight_wide">7</integer>
+    <integer name="layout_weight_wide">9</integer>
+    <integer name="view_weight_medium">3</integer>
+    <integer name="layout_weight_medium">5</integer>
+
+</resources>
