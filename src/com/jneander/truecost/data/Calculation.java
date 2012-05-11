@@ -46,7 +46,7 @@ public class Calculation {
 	public boolean commit() {
 		// Ensure that usable values are provided
 		if ( Double.isNaN( balance ) || Double.isNaN( APR )
-				|| Double.isNaN( payment ) ) {
+				|| Double.isNaN( payment ) || paymentIsTooSmall() ) {
 			return false;
 		}
 		
@@ -90,5 +90,9 @@ public class Calculation {
 	
 	public double getCost() {
 		return this.totalCost;
+	}
+	
+	public boolean paymentIsTooSmall() {
+	  return (balance <= (balance - payment) * (APR / 1200.0));
 	}
 }
