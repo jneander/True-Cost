@@ -8,7 +8,7 @@ public class MessageBuilder {
   /** Builds and return the Results message. */
   public static String buildResultsMessage( Context caller, double truecost,
       double price, double interest, int duration,
-      Calculator.METHOD method ) {
+      Calculator.Method method ) {
     // Initialize the message String
     String messageBody = "";
 
@@ -43,7 +43,7 @@ public class MessageBuilder {
     messageBody += "<br><br>"; // paragraph break
 
     /* CASH MESSAGE */
-    if ( method == Calculator.METHOD.CASH ) { // paying with cash
+    if ( method == Calculator.Method.CASH ) { // paying with cash
       String cashMessage =
           caller.getString( R.string.results_message_body_cash )
               .replace( "#", getCurrencyString( price ) );

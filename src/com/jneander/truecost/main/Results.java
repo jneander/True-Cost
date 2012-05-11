@@ -13,7 +13,7 @@ import com.jneander.truecost.data.MessageBuilder;
 
 public class Results extends Activity {
   // Initialize class storage
-  private Calculator.METHOD method;
+  private Calculator.Method method;
   private double price, interest, truecost;
   private int duration;
 
@@ -21,14 +21,13 @@ public class Results extends Activity {
 
   @Override
   public void onCreate( Bundle savedInstanceState ) {
-    // Initialize the Activity
     super.onCreate( savedInstanceState );
     setContentView( R.layout.results );
 
     // Fetch 'extras' from Intent
     Bundle extras = getIntent().getExtras();
-    method = extras.getInt( "method" ) == 0 ? Calculator.METHOD.CASH
-        : Calculator.METHOD.CREDIT;
+    method = extras.getInt( "method" ) == 0 ? Calculator.Method.CASH
+        : Calculator.Method.CREDIT;
     price = extras.getDouble( "price" );
 
     // Calculate the results of the query
@@ -39,9 +38,11 @@ public class Results extends Activity {
         price,
         method
         );
-
-    if ( !calculator.commit() )
-      this.finish();
+    
+    if ( calculator.paymentIsTooSmall())
+      this.finish(); // TEMPORARY: must avoid impossible repayment
+    else
+      calculator.calculate();
 
     interest = calculator.getInterest();
     truecost = calculator.getTrueCost();
@@ -55,7 +56,6 @@ public class Results extends Activity {
         (TextView) findViewById( R.id.results_message_truecost );
     trueview.setText( MessageBuilder.getCurrencyString( truecost ) );
 
-    // Build and display the Results message
     message = (TextView) findViewById( R.id.results_message );
     message.setText( Html.fromHtml( MessageBuilder.buildResultsMessage(
         this, truecost, price, interest, duration, method

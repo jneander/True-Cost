@@ -4,14 +4,14 @@ public class Calculator {
 	private double accountBalance, APR, payment;
 	private double price, interest, truecost;
 	private int duration;
-	private METHOD method;
+	private Method method;
 	
-	public enum METHOD {
+	public enum Method {
 		CASH,
 		CREDIT
 	};
 	
-	public Calculator( double balance, double APR, double payment, double price, METHOD method ) {
+	public Calculator( double balance, double APR, double payment, double price, Method method ) {
 		this.accountBalance = balance;
 		this.APR = APR;
 		this.payment = payment;
@@ -31,32 +31,29 @@ public class Calculator {
     return this.duration;
   }
 
-	public boolean calculate() {
+	public void calculate() {
 		Repayment unmodified = new Repayment( accountBalance, APR, payment );
 		Repayment withPayment = new Repayment( accountBalance - price, APR, payment );
 		Repayment withPurchase = new Repayment( accountBalance + price, APR, payment );
 		
-		boolean returnSuccess = true;
-
-		if ( !unmodified.calculate() )
-			returnSuccess = false;
+		unmodified.calculate();
 		
-		if ( method == METHOD.CASH ) {
-			if ( !withPayment.calculate() )
-				returnSuccess =  false;
-
-			interest = unmodified.getInterest() - withPayment.getInterest();
-			truecost = unmodified.getCost() - withPayment.getCost();
-			duration = unmodified.getDuration() - withPayment.getDuration();
+		if (method == Method.CASH) {
+		  withPayment.calculate();
+		  storeRepaymentsDifference( unmodified, withPayment );
 		} else {
-			if ( !withPurchase.calculate() )
-				returnSuccess =  false;
-			
-			interest = withPurchase.getInterest() - unmodified.getInterest();
-			truecost = withPurchase.getCost() - unmodified.getCost();
-			duration = withPurchase.getDuration() - unmodified.getDuration();
+		  withPurchase.calculate();
+		  storeRepaymentsDifference( withPurchase, unmodified );
 		}
-		
-		return returnSuccess;
 	}
+
+  private void storeRepaymentsDifference( Repayment unmodified, Repayment withPayment ) {
+    interest = unmodified.getInterest() - withPayment.getInterest();
+    truecost = unmodified.getCost() - withPayment.getCost();
+    duration = unmodified.getDuration() - withPayment.getDuration();
+  }
+
+  public boolean paymentIsTooSmall() {
+    return (new Repayment(accountBalance, APR, payment)).paymentIsTooSmall();
+  }
 }

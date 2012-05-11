@@ -11,17 +11,38 @@ public class Repayment {
     setPayment( payment );
   }
 
-  public void setBalance( double balance ) {
-    this.balance = balance;
+  public boolean setBalance( double balance ) {
+    boolean returnSuccess = true;
+
+    if ( isValidBalance() )
+      this.balance = balance;
+    else
+      returnSuccess = false;
+
+    return returnSuccess;
   }
 
-  public void setAPR( double APR ) {
-    this.APR = APR;
-    monthlyInterestRate = APR / 1200.0;
+  public boolean setAPR( double APR ) {
+    boolean returnSuccess = true;
+
+    if ( isValidAPR() ) {
+      this.APR = APR;
+      monthlyInterestRate = APR / 1200.0;
+    } else
+      returnSuccess = false;
+
+    return returnSuccess;
   }
 
-  public void setPayment( double payment ) {
-    this.payment = payment;
+  public boolean setPayment( double payment ) {
+    boolean returnSuccess = true;
+
+    if ( isValidBalance() )
+      this.payment = payment;
+    else
+      returnSuccess = false;
+
+    return returnSuccess;
   }
 
   public double getBalance() {
@@ -40,35 +61,33 @@ public class Repayment {
     return this.duration;
   }
 
-  public boolean calculate() {
-    boolean returnSuccess = (isValidBalance() && !isValidAPR() && !isValidPayment());
+  public void calculate() {
+    double balanceRemaining = balance;
 
-    if ( returnSuccess ) {
-      double balanceRemaining = balance;
-      
-      totalInterest = 0;
-      totalCost = 0;
-      duration = 0;
+    totalInterest = 0;
+    totalCost = 0;
+    duration = 0;
 
-      while ( balanceRemaining > 0 ) {
-        if ( balanceRemaining > payment ) {
-          totalCost += payment;
-          balanceRemaining -= payment;
+    while ( balanceRemaining > 0 ) {
+      if ( balanceRemaining > payment ) {
+        totalCost += payment;
+        balanceRemaining -= payment;
 
-          double currentInterest = balanceRemaining * monthlyInterestRate;
+        double currentInterest = balanceRemaining * monthlyInterestRate;
 
-          totalInterest += currentInterest;
-          balanceRemaining += currentInterest;
-        } else {
-          totalCost += balanceRemaining;
-          balanceRemaining = 0.0;
-        }
-
-        duration++;
+        totalInterest += currentInterest;
+        balanceRemaining += currentInterest;
+      } else {
+        totalCost += balanceRemaining;
+        balanceRemaining = 0.0;
       }
+
+      duration++;
     }
-    
-    return returnSuccess;
+  }
+
+  public boolean hasValidValues() {
+    return isValidBalance() && isValidAPR() && isValidPayment();
   }
 
   private boolean isValidPayment() {
