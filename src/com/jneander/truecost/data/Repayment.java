@@ -1,11 +1,11 @@
 package com.jneander.truecost.data;
 
-public class Calculation {
+public class Repayment {
   private double balance, APR, payment;
   private double totalCost, totalInterest, monthlyInterestRate;
   private int duration;
 
-  public Calculation( double balance, double APR, double payment ) {
+  public Repayment( double balance, double APR, double payment ) {
     setBalance( balance );
     setAPR( APR );
     setPayment( payment );
@@ -41,17 +41,15 @@ public class Calculation {
   }
 
   public boolean calculate() {
-    boolean returnSuccess = !(Double.isNaN( balance ) || Double.isNaN( APR )
-        || Double.isNaN( payment ) || paymentIsTooSmall());
+    boolean returnSuccess = (isValidBalance() && !isValidAPR() && !isValidPayment());
 
-    double monthlyInterestRate = APR / 1200.0;
-    double balanceRemaining = balance;
+    if ( returnSuccess ) {
+      double balanceRemaining = balance;
+      
+      totalInterest = 0;
+      totalCost = 0;
+      duration = 0;
 
-    totalInterest = 0;
-    totalCost = 0;
-    duration = 0;
-
-    if ( returnSuccess )
       while ( balanceRemaining > 0 ) {
         if ( balanceRemaining > payment ) {
           totalCost += payment;
@@ -68,8 +66,21 @@ public class Calculation {
 
         duration++;
       }
-
+    }
+    
     return returnSuccess;
+  }
+
+  private boolean isValidPayment() {
+    return !(Double.isNaN( payment ) || (payment <= (balance - payment) * monthlyInterestRate));
+  }
+
+  private boolean isValidAPR() {
+    return !Double.isNaN( APR );
+  }
+
+  private boolean isValidBalance() {
+    return !Double.isNaN( balance );
   }
 
   public double getInterest() {
