@@ -1,14 +1,11 @@
 package com.jneander.truecost.data;
 
 public class Calculation {
-	// Declare class storage.
 	private double balance, APR, payment;
 	private double totalCost, totalInterest;
 	private int duration;
 
-	/* Calculation Class Constructor */
 	public Calculation( double balance, double APR, double payment ) {
-		// Place constructor values into 'this' storage.
 		setBalance( balance );
 		setAPR( APR );
 		setPayment( payment );
@@ -43,7 +40,7 @@ public class Calculation {
 	}
 
 	/* Commit to the calculation */
-	public boolean commit() {
+	public boolean calculate() {
 		// Ensure that usable values are provided
 		if ( Double.isNaN( balance ) || Double.isNaN( APR )
 				|| Double.isNaN( payment ) || paymentIsTooSmall() ) {
