@@ -22,6 +22,7 @@
     <!-- Alert Strings -->
     <string name="alert_generic"></string>
     <string name="alert_nothing_entered">Please enter a valid value.</string>
+    <string name="alert_small_payment">Your payment is smaller than the interest you earn. Try increasing your payment amount.</string>
 
     <!-- Intro -->
     <string name="intro_welcome">Thank you for using True Cost!</string>
@@ -47,7 +48,6 @@
     <string name="account_label_apr">APR</string>
     <string name="account_symbol_apr">%</string>
     <string name="account_label_save">Save Changes</string>
-    <string name="account_warning">Your payment is smaller than the interest you earn. Try increasing your payment amount.</string>
 
     <!-- Results -->
     <string name="results_title">Results!</string>
