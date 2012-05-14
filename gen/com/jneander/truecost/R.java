@@ -111,20 +111,20 @@ public final class R {
         public static final int about_title=0x7f080023;
         public static final int about_whyfree_header=0x7f080025;
         public static final int about_whyfree_message=0x7f080026;
-        public static final int account_header=0x7f080012;
-        public static final int account_label_apr=0x7f080015;
-        public static final int account_label_balance=0x7f080013;
-        public static final int account_label_payment=0x7f080014;
-        public static final int account_label_save=0x7f080017;
-        public static final int account_symbol_apr=0x7f080016;
+        public static final int account_header=0x7f080013;
+        public static final int account_label_apr=0x7f080016;
+        public static final int account_label_balance=0x7f080014;
+        public static final int account_label_payment=0x7f080015;
+        public static final int account_label_save=0x7f080018;
+        public static final int account_symbol_apr=0x7f080017;
         /**  Account 
          */
-        public static final int account_title=0x7f080011;
-        public static final int account_warning=0x7f080018;
+        public static final int account_title=0x7f080012;
         /**  Alert Strings 
          */
         public static final int alert_generic=0x7f080008;
         public static final int alert_nothing_entered=0x7f080009;
+        public static final int alert_small_payment=0x7f08000a;
         /**  Application Strings 
          */
         public static final int app_name=0x7f080000;
@@ -134,21 +134,21 @@ public final class R {
          */
         public static final int data_account_balance=0x7f080004;
         public static final int data_account_payment=0x7f080005;
-        public static final int intro_button_begin=0x7f08000c;
-        public static final int intro_message=0x7f08000b;
+        public static final int intro_button_begin=0x7f08000d;
+        public static final int intro_message=0x7f08000c;
         /**  Intro 
          */
-        public static final int intro_welcome=0x7f08000a;
+        public static final int intro_welcome=0x7f08000b;
         /**  Menu 
          */
         public static final int menu_about=0x7f080002;
         public static final int menu_account=0x7f080003;
-        public static final int query_button_results=0x7f080010;
-        public static final int query_prompt_howmuch=0x7f08000e;
-        public static final int query_prompt_method=0x7f08000f;
+        public static final int query_button_results=0x7f080011;
+        public static final int query_prompt_howmuch=0x7f08000f;
+        public static final int query_prompt_method=0x7f080010;
         /**  Query 
          */
-        public static final int query_title=0x7f08000d;
+        public static final int query_title=0x7f08000e;
         public static final int results_message_body_cash=0x7f08001c;
         public static final int results_message_body_credit=0x7f08001d;
         public static final int results_message_body_duration=0x7f08001e;
