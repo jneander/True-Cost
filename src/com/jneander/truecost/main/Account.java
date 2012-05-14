@@ -15,6 +15,7 @@ import android.widget.ViewFlipper;
 import com.jneander.truecost.R;
 import com.jneander.truecost.data.AccountData;
 import com.jneander.truecost.data.Repayment;
+import com.jneander.truecost.util.Alert;
 
 public class Account extends Activity implements OnClickListener {
   private EditText balanceField;
@@ -100,7 +101,7 @@ public class Account extends Activity implements OnClickListener {
           getFieldString( aprField ) );
       dataWasSaved = true;
     } else {
-      Toast.makeText( this, this.getString( R.string.account_warning ), Toast.LENGTH_LONG ).show();
+      Alert.alertUser( this, Alert.AlertType.SMALL_PAYMENT );
     }
 
     return dataWasSaved;
