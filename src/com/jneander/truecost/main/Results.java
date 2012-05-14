@@ -12,37 +12,25 @@ import com.jneander.truecost.data.Calculator;
 import com.jneander.truecost.data.MessageBuilder;
 
 public class Results extends Activity {
-  // Initialize class storage
   private Calculator.Method method;
   private double price, interest, truecost;
   private int duration;
 
-  TextView message; // destination for Results message
+  TextView resultsMessage;
 
   @Override
   public void onCreate( Bundle savedInstanceState ) {
     super.onCreate( savedInstanceState );
     setContentView( R.layout.results );
 
-    // Fetch 'extras' from Intent
-    Bundle extras = getIntent().getExtras();
-    method = extras.getInt( "method" ) == 0 ? Calculator.Method.CASH
-        : Calculator.Method.CREDIT;
-    price = extras.getDouble( "price" );
+    loadCalculationArguments();
 
-    // Calculate the results of the query
-    Calculator calculator = new Calculator(
-        AccountData.getBalance( this ),
-        AccountData.getAPR( this ),
-        AccountData.getPayment( this ),
-        price,
-        method
-        );
-    
-    if ( calculator.paymentIsTooSmall())
-      this.finish(); // TEMPORARY: must avoid impossible repayment
-    else
-      calculator.calculate();
+    Calculator calculator = new Calculator();
+    calculator.setAccountBalance( AccountData.getBalance( this ) );
+    calculator.setApr( AccountData.getAPR( this ) );
+    calculator.setPayment( AccountData.getPayment( this ) );
+    calculator.setPrice( price );
+    calculator.setMethod( method );
 
     interest = calculator.getInterest();
     truecost = calculator.getTrueCost();
@@ -51,14 +39,18 @@ public class Results extends Activity {
     updateViews();
   }
 
+  private void loadCalculationArguments() {
+    Bundle extras = getIntent().getExtras();
+    method = extras.getInt( "method" ) == 0 ? Calculator.Method.CASH : Calculator.Method.CREDIT;
+    price = extras.getDouble( "price" );
+  }
+
   private void updateViews() {
-    TextView trueview =
-        (TextView) findViewById( R.id.results_message_truecost );
+    TextView trueview = (TextView) findViewById( R.id.results_message_truecost );
     trueview.setText( MessageBuilder.getCurrencyString( truecost ) );
 
-    message = (TextView) findViewById( R.id.results_message );
-    message.setText( Html.fromHtml( MessageBuilder.buildResultsMessage(
-        this, truecost, price, interest, duration, method
-        ) ) );
+    resultsMessage = (TextView) findViewById( R.id.results_message );
+    resultsMessage.setText( Html.fromHtml( MessageBuilder.buildResultsMessage(
+        this, truecost, price, interest, duration, method ) ) );
   }
 }

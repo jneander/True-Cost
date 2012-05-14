@@ -103,14 +103,14 @@ public final class R {
         public static final int menu=0x7f0b0000;
     }
     public static final class string {
-        public static final int about_howhelp_header=0x7f080024;
-        public static final int about_howhelp_message=0x7f080025;
-        public static final int about_main_message=0x7f080021;
+        public static final int about_howhelp_header=0x7f080025;
+        public static final int about_howhelp_message=0x7f080026;
+        public static final int about_main_message=0x7f080022;
         /**  About 
          */
-        public static final int about_title=0x7f080020;
-        public static final int about_whyfree_header=0x7f080022;
-        public static final int about_whyfree_message=0x7f080023;
+        public static final int about_title=0x7f080021;
+        public static final int about_whyfree_header=0x7f080023;
+        public static final int about_whyfree_message=0x7f080024;
         public static final int account_header=0x7f080010;
         public static final int account_label_apr=0x7f080013;
         public static final int account_label_balance=0x7f080011;
@@ -120,6 +120,7 @@ public final class R {
         /**  Account 
          */
         public static final int account_title=0x7f08000f;
+        public static final int account_warning=0x7f080016;
         /**  Application Strings 
          */
         public static final int app_name=0x7f080000;
@@ -144,18 +145,18 @@ public final class R {
         /**  Query 
          */
         public static final int query_title=0x7f08000b;
-        public static final int results_message_body_cash=0x7f080019;
-        public static final int results_message_body_credit=0x7f08001a;
-        public static final int results_message_body_duration=0x7f08001b;
-        public static final int results_message_body_highinterest_equal=0x7f08001d;
-        public static final int results_message_body_highinterest_high=0x7f08001f;
-        public static final int results_message_body_highinterest_low=0x7f08001c;
-        public static final int results_message_body_highinterest_mid=0x7f08001e;
-        public static final int results_message_body_interest=0x7f080018;
-        public static final int results_message_header=0x7f080017;
+        public static final int results_message_body_cash=0x7f08001a;
+        public static final int results_message_body_credit=0x7f08001b;
+        public static final int results_message_body_duration=0x7f08001c;
+        public static final int results_message_body_highinterest_equal=0x7f08001e;
+        public static final int results_message_body_highinterest_high=0x7f080020;
+        public static final int results_message_body_highinterest_low=0x7f08001d;
+        public static final int results_message_body_highinterest_mid=0x7f08001f;
+        public static final int results_message_body_interest=0x7f080019;
+        public static final int results_message_header=0x7f080018;
         /**  Results 
          */
-        public static final int results_title=0x7f080016;
+        public static final int results_title=0x7f080017;
         /**  Generic Strings 
          */
         public static final int ui_hint_currency=0x7f080007;
