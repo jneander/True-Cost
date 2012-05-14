@@ -19,6 +19,10 @@
     <!-- Generic Strings -->
     <string name="ui_hint_currency">####.##</string>
 
+    <!-- Alert Strings -->
+    <string name="alert_generic"></string>
+    <string name="alert_nothing_entered">Please enter a valid value.</string>
+
     <!-- Intro -->
     <string name="intro_welcome">Thank you for using True Cost!</string>
     <string name="intro_message">The goal of this application is to help people with credit debt realize the real value of their money. By showing how interest increases or decreases with purchases and payments, it becomes quite clear that every dollar is worth more than face value to a person with credit debt.\n\nThis application does not use any sensitive or personally-identifying information. You\'ll see why once you get started.</string>
