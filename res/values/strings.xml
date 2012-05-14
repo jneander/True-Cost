@@ -43,6 +43,7 @@
     <string name="account_label_apr">APR</string>
     <string name="account_symbol_apr">%</string>
     <string name="account_label_save">Save Changes</string>
+    <string name="account_warning">Your payment is smaller than the interest you earn. Try increasing your payment amount.</string>
 
     <!-- Results -->
     <string name="results_title">Results!</string>
