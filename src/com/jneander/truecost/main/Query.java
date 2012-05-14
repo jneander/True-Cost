@@ -19,27 +19,20 @@ import com.jneander.truecost.R;
 import com.jneander.truecost.data.AccountData;
 
 public class Query extends Activity implements OnClickListener {
-  // Declare class storage.
-  private static int paymentMethodValue = 0;
+  private static int paymentMethodIndex = 0;
   private Intent resultsIntent;
 
-  /** Called when the activity is first created. */
   @Override
   public void onCreate( Bundle savedInstanceState ) {
     super.onCreate( savedInstanceState );
     setContentView( R.layout.query );
 
-    // Build the 'Payment Method' Spinner
-    Spinner spinner =
-        (Spinner) findViewById( R.id.query_spinner_paymentMethod );
+    Spinner spinner = (Spinner) findViewById( R.id.query_spinner_paymentMethod );
     spinner.setOnItemSelectedListener( new QueryOnItemSelectedListener() );
 
-    // Set the '[query]' Button
-    Button resultsButton =
-        (Button) findViewById( R.id.query_button_results );
+    Button resultsButton = (Button) findViewById( R.id.query_button_results );
     resultsButton.setOnClickListener( this );
 
-    // Initialize 'Results' Intent
     resultsIntent = new Intent( this, Results.class );
   }
 
@@ -47,43 +40,20 @@ public class Query extends Activity implements OnClickListener {
   public void onResume() {
     super.onResume();
 
-    // Check for existing AccountData
     if ( !AccountData.exists( this ) ) {
-      // Load the 'Introduction'
-      Intent i = new Intent( this, Account.class );
-      startActivity( i );
+      Intent introIntent = new Intent( this, Account.class );
+      startActivity( introIntent );
     }
   }
 
-  /** Listener for 'Payment Method' Spinner selections */
-  public class QueryOnItemSelectedListener implements OnItemSelectedListener {
-    public void onItemSelected( AdapterView< ? > parent, View view,
-        int pos, long id ) {
-      // Store the index position of the selected item.
-      paymentMethodValue = pos;
-    }
-
-    public void onNothingSelected( AdapterView< ? > parent ) {
-      // Do nothing.
-    }
-  }
-
-  /** When the interface detects a 'click'... */
   public void onClick( View v ) {
-    // Get the ID of the 'clicked' element
     switch ( v.getId() ) {
     case R.id.query_button_results:
-      // If the 'Price' field contains characters...
-      if ( ((EditText) findViewById( R.id.query_price_edittext ))
-          .length() > 0 ) {
-        // Insert 'Price' field data into 'Results' Intent extras
-        resultsIntent.putExtra( "price",
-            Double.valueOf( ((EditText) findViewById(
-                R.id.query_price_edittext ))
-                    .getText().toString() ) );
-        resultsIntent.putExtra( "method", paymentMethodValue );
+      if ( priceFieldContainsCharacters() ) {
+        resultsIntent.putExtra( "price", getPriceFieldValue() );
+        resultsIntent.putExtra( "method", paymentMethodIndex );
 
-        startActivity( resultsIntent ); // Start 'Results' Activity
+        startActivity( resultsIntent );
       } else {
         // Nothing was entered; inform the user.
         // TODO: Alert > "Please enter a price."
@@ -92,31 +62,47 @@ public class Query extends Activity implements OnClickListener {
     }
   }
 
-  /** Create 'Menu' for this Activity */
   @Override
   public boolean onCreateOptionsMenu( Menu menu ) {
-    super.onCreateOptionsMenu( menu ); // Call base class method.
+    super.onCreateOptionsMenu( menu );
+
     MenuInflater inflater = getMenuInflater();
     inflater.inflate( R.menu.menu, menu );
+
     return true;
   }
 
-  /** When a 'Menu' item is selected... */
   @Override
   public boolean onOptionsItemSelected( MenuItem item ) {
-    // Get the ID of the selected item
+    boolean validItemSelected = false;
+
     switch ( item.getItemId() ) {
     case R.id.menu_about:
-      // Start 'About' Activity
-      // TODO: Create 'About' Activity
       startActivity( new Intent( this, About.class ) );
-      return true;
+      validItemSelected = true;
+      break;
     case R.id.menu_account:
-      // Start 'Account' Activity
       startActivity( new Intent( this, Account.class ) );
-      return true;
+      validItemSelected = true;
+      break;
     }
 
-    return false;
+    return validItemSelected;
+  }
+
+  public class QueryOnItemSelectedListener implements OnItemSelectedListener {
+    public void onItemSelected( AdapterView< ? > parent, View view, int selectedIndex, long id ) {
+      paymentMethodIndex = selectedIndex;
+    }
+
+    public void onNothingSelected( AdapterView< ? > parent ) {}
+  }
+
+  private Double getPriceFieldValue() {
+    return Double.valueOf( ((EditText) findViewById( R.id.query_price_edittext )).getText().toString() );
+  }
+
+  private boolean priceFieldContainsCharacters() {
+    return ((EditText) findViewById( R.id.query_price_edittext )).length() > 0;
   }
 }
