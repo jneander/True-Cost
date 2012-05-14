@@ -17,8 +17,11 @@ public class Alert {
     case NOTHING_ENTERED:
       resource = R.string.alert_nothing_entered;
       break;
+    case SMALL_PAYMENT:
+      resource = R.string.alert_small_payment;
+      break;
     }
 
-    Toast.makeText( context, context.getString( resource ), Toast.LENGTH_LONG );
+    Toast.makeText( context, context.getString( resource ), Toast.LENGTH_LONG ).show();
   }
 }
